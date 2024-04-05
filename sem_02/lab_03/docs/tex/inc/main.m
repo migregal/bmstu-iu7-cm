@@ -46,7 +46,7 @@ function parabolic_method(a, b, eps, debugFlg, delayS)
             new_x = b - tau*l;
             new_f = f(new_x);
 
-            if f1 < new_f
+            if f1 <= new_f
                x3 = x2;     f3 = f2;
                x2 = x1;     f2 = f1;
                x1 = new_x;  f1 = new_f;
@@ -127,7 +127,7 @@ function parabolic_method(a, b, eps, debugFlg, delayS)
         if debugFlg
             fprintf('№ %2d:\t [x1, x3] = [%.10f, %.10f], f(x1) = %.10f, f(x3) = %.10f\n', i, x1, x3, f1, f3);
             fprintf('Current min point: x=%.10f, f(x)=%.10f\n', x_, f_);
-            % line([x1 x3], [f1 f3], 'color', 'b');
+            line([x1 x3], [f1 f3], 'color', 'b');
             plot(x_, f_, 'xk');
             hold on;
             pause(delayS);

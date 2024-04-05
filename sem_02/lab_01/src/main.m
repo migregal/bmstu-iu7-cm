@@ -1,5 +1,6 @@
 function lab01()
     clc();
+    clf();
 
     debugFlg = 1;
     delayS = 0.8;

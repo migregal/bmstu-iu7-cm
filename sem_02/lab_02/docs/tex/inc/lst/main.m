@@ -1,10 +1,12 @@
 function lab02()
     clc();
+    clf();
+
     debugFlg = 1;
-    delayS = 0.8;
+    delayS = 1e-2;
     a = 0;
     b = 1;
-    eps = 1e-2;
+    eps = 1e-6;
 
     fplot(@f, [a, b]);
     hold on;
@@ -32,7 +34,6 @@ function [xStar, fStar] = goldenRatio(a, b, eps, debugFlg, delayS)
         if debugFlg
             fprintf('№ %2d ai=%.10f bi=%.10f\n', i, a, b);
             line([a b], [f(a) f(b)], 'color', 'b');
-            %plot(a, f(a), 'xm', b, f(b), 'xb');
             hold on;
             pause(delayS);
         end
@@ -74,7 +75,8 @@ function [xStar, fStar] = goldenRatio(a, b, eps, debugFlg, delayS)
 end
 
 function y = f(x)
-    k = power(5,1/3);
+    y = power(x - 0.555, 8);
+    %k = power(5,1/3);
 
-    y = sinh((3 * power(x,4) - x + sqrt(17) - 3) / 2) + sin((k * power(x, 3) - k * x + 1 - 2 * k) ./ (-power(x,3) + x + 2));
+    %y = sinh((3 * power(x,4) - x + sqrt(17) - 3) / 2) + sin((k * power(x, 3) - k * x + 1 - 2 * k) ./ (-power(x,3) + x + 2));
 end

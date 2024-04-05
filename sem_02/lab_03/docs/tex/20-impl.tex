@@ -12,7 +12,7 @@
 \item провести решение задачи
 \begin{equation*}
 \begin{cases}
-f(x) \rightarrow min \\
+f(x) \rightarrow \min \\
 x \in [a, b]
 \end{cases}
 \end{equation*}
@@ -22,7 +22,7 @@ x \in [a, b]
 
 Индивидуальный вариант целевой функции:
 \begin{equation*}
-sh(\frac{3x^4 - x + \sqrt{17} - 3}{2})+sin(\frac{5^{1/3}x^3 - 5^{1/3}x + 1 - 4*5^{1/3}}{-x^3 + x + 2}),
+\sinh\left(\frac{3x^4 - x + \sqrt{17} - 3}{2}\right)+\sin\left(\frac{5^{1/3}x^3 - 5^{1/3}x + 1 - 4*5^{1/3}}{-x^3 + x + 2}\right),
 \end{equation*}
 
 при $[a, b] = [0, 1]$.
@@ -36,7 +36,7 @@ sh(\frac{3x^4 - x + \sqrt{17} - 3}{2})+sin(\frac{5^{1/3}x^3 - 5^{1/3}x + 1 - 4*5
 Выбираются пробные точки $x_1$, $x_2$, $x_3$ внутри рассматриваемого интервала $[a, b]$, так что:
 \begin{enumerate}
 \item $x_1 < x_2 < x_3$.
-\item $f(x_1) \ge f(x_2) \ge f(x_3)$, где по крайней мере одно неравенство является строгим.
+\item $f(x_1) \ge f(x_2) \le f(x_3)$, где по крайней мере одно неравенство является строгим.
 \end{enumerate}
 
 В силу унимодальности целевой функции можно утверждать, что точка минимума $x*$, как и $x_2$ удовлетворяет условию $x^* \in [x_1, x_3]$.
@@ -51,8 +51,8 @@ $g(x) = a_0 + a_1(x - x_1) + a_2(x - x_1)(x - x_2)$
 \begin{cases}
 a_0 = f_1 \\
 a_1 = \frac{f_2 - f_1}{x_2 - x_1} \\
-a_2 = \frac{1}{x_3 - x_2}[\frac{f_3 - f_1}{x_3 - x_1} - \frac{f_2 - f_1}{x_2 - x_1}] \\
-\overline{x} = \frac{1}{2}[x_1 - x_2 - \frac{a_1}{a_2}]
+a_2 = \frac{1}{x_3 - x_2}\left[\frac{f_3 - f_1}{x_3 - x_1} - \frac{f_2 - f_1}{x_2 - x_1}\right] \\
+\overline{x} = \frac{1}{2}\left[x_1 - x_2 - \frac{a_1}{a_2}\right]
 \end{cases}
 \end{equation*}
 
